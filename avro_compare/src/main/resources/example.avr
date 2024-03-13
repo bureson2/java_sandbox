@@ -1,0 +1,56 @@
+{
+  "type": "record",
+  "name": "TestEntity",
+  "namespace": "com.example",
+  "fields": [
+  {
+      "type": "boolean",
+    "name": "isActive",
+    "doc": "Indicates whether the entity is active."
+  },
+    {
+      "name": "id",
+      "type": "int",
+      "doc": "The unique identifier for the entity."
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Record timestamp in milliseconds since epoch."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "The name of the entity."
+    },
+    {
+      "name": "tags",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "doc": "A list of tags associated with the entity."
+    },
+    {
+      "name": "metadata",
+      "type": {
+        "type": "map",
+        "values": "string"
+      },
+      "doc": "A map of key-value pairs to store additional information."
+    },
+    {
+      "name": "relatedIds",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "int"
+        }
+      ],
+      "default": null,
+      "doc": "A list of related entity identifiers, if any."
+    }
+  ]
+}
